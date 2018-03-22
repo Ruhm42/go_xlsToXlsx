@@ -121,7 +121,7 @@ func convertXlsToXlsx(xlsPath string, removeFile bool) {
 					xlsxRow := xlsxSheet.AddRow()
 
 					// iteration each column
-					for col_index := 0; col_index <=  xlsRow.LastCol(); col_index ++ {
+					for col_index := 0; xlsRow.Col(col_index) != ""; col_index ++ {
 						// create and fill corresponding col
 						cell := xlsxRow.AddCell()
 						cell.Value = xlsRow.Col(col_index)
